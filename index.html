@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Open</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fffafa, #ffe4e1); /* Màu nền nhẹ nhàng */
+            overflow: hidden;
+        }
+
+        .card-container {
+            text-align: center;
+        }
+
+        #animated-card {
+            max-width: 90%;
+            width: 400px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+            /* Áp dụng 2 hiệu ứng animation cùng lúc */
+            animation: heartbeat 1.5s infinite ease-in-out, glow 2.5s infinite alternate;
+        }
+
+        #animated-card:hover {
+            transform: scale(1.05); /* Phóng to nhẹ khi di chuột qua */
+        }
+
+        /* Hiệu ứng đập như tim */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Hiệu ứng phát sáng quanh viền */
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5));
+            }
+            100% {
+                filter: drop-shadow(0 0 25px rgba(255, 105, 180, 1));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <a href="landing.html">
+            <img id="animated-card" src="./8246.png" alt="Happy Women's Day Card">
+        </a>
+    </div>
+
+</body>
+</html>
